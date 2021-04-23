@@ -31,6 +31,7 @@ env:
 jobs:
   allow_failures:
     - python: nightly
+    - arch: amd64
   include:
     # Unit tests
     - python: 3.6
@@ -62,6 +63,26 @@ jobs:
       stage: deploy
       script:
         - ./ci/deploy.sh
+        
+    # Power jobs
+    - python: 3.6
+      env: NOX_SESSION=test-3.6
+      arch: ppc64le
+    - python: 3.7
+      env: NOX_SESSION=test-3.7
+      arch: ppc64le
+    - python: 3.8
+      env: NOX_SESSION=test-3.8
+      arch: ppc64le
+    - python: 3.9
+      env: NOX_SESSION=test-3.9
+      arch: ppc64le
+    - python: nightly
+      env: NOX_SESSION=test-3.10
+      arch: ppc64le
+    - python: 3.9
+      env: NOX_SESSION=test_brotlipy
+      arch: ppc64le
 
 stages:
   - name: test
