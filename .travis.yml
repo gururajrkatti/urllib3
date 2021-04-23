@@ -46,24 +46,6 @@ jobs:
       env: NOX_SESSION=test-3.10
     - python: pypy3.6-7.3.1
       env: NOX_SESSION=test-pypy
-
-    # Extras
-    - python: 3.7
-      env: NOX_SESSION=google_brotli
-    # Downstream integration tests.
-    - python: 3.7
-      env: DOWNSTREAM=requests
-      stage: integration
-
-    - python: 3.7
-      env: DOWNSTREAM=botocore
-      stage: integration
-
-    - python: 3.7
-      stage: deploy
-      script:
-        - ./ci/deploy.sh
-        
     # Power jobs
     - python: 3.6
       env: NOX_SESSION=test-3.6
@@ -84,7 +66,25 @@ jobs:
       env: NOX_SESSION=test_brotlipy
       arch: ppc64le
 
+
+    # Extras
+    - python: 3.7
+      env: NOX_SESSION=google_brotli
+    # Downstream integration tests.
+    - python: 3.7
+      env: DOWNSTREAM=requests
+      stage: integration
+
+    - python: 3.7
+      env: DOWNSTREAM=botocore
+      stage: integration
+        - ./ci/deploy.sh
+       
 stages:
+
+    - python: 3.7
+      stage: deploy
+      script:
   - name: test
     if: tag IS blank
 
