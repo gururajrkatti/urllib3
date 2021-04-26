@@ -97,9 +97,9 @@ jobs:
   #  if: tag IS blank
 
   # Run integration tests for release candidates
-  #- name: integration
-  #  if: type = pull_request AND head_branch =~ ^release-[\d.]+$ AND tag IS blank
+  - name: integration
+    if: type = pull_request AND head_branch =~ ^release-[\d.]+$ AND tag IS blank
 
   # Deploy on any tags
-  #- name: deploy
-  #  if: tag IS present AND tag =~ /^(\d+\.\d+(?:.\d+)?)$/ AND repo = urllib3/urllib3
+  - name: deploy
+    if: tag IS present AND tag =~ /^(\d+\.\d+(?:.\d+)?)$/ AND repo = urllib3/urllib3
