@@ -42,18 +42,18 @@ jobs:
     - arch: amd64
   include:
     # Unit tests
-     - python: 3.6
-       env: NOX_SESSION=test-3.6
-     - python: 3.7
-       env: NOX_SESSION=test-3.7
-     - python: 3.8
-       env: NOX_SESSION=test-3.8
-     - python: 3.9
-       env: NOX_SESSION=test-3.9
-     - python: nightly
-       env: NOX_SESSION=test-3.10
-     - python: pypy3.6-7.3.1
-       env: NOX_SESSION=test-pypy
+    - python: 3.6
+      env: NOX_SESSION=test-3.6
+    - python: 3.7
+      env: NOX_SESSION=test-3.7
+    - python: 3.8
+      env: NOX_SESSION=test-3.8
+    - python: 3.9
+      env: NOX_SESSION=test-3.9
+    - python: nightly
+      env: NOX_SESSION=test-3.10
+    - python: pypy3.6-7.3.1
+      env: NOX_SESSION=test-pypy
     # Power jobs
     - python: 3.6
       env: NOX_SESSION=test-3.6
