@@ -2,6 +2,14 @@ language: python
 os: linux
 dist: focal
 
+addons:
+    apt:
+      update: true
+      packages: 
+       - python3-openssl
+       - rustc  # For cryptography build
+       - cargo  # For installing rstcheck
+
 before_install:
   - env
   - openssl version
