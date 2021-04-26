@@ -93,8 +93,8 @@ jobs:
         - ./ci/deploy.sh
        
 stages:
-  #- name: test
-  #  if: tag IS blank
+   - name: test
+     if: tag IS blank
 
   # Run integration tests for release candidates
   - name: integration
