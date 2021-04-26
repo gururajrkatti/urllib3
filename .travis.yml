@@ -86,13 +86,13 @@ jobs:
     - python: 3.7
       env: DOWNSTREAM=botocore
       stage: integration
+      
+    - python: 3.7
+      stage: deploy
+      script:
         - ./ci/deploy.sh
        
 #stages:
-
-  #  - python: 3.7
-  #    stage: deploy
-  #    script:
   #- name: test
   #  if: tag IS blank
 
